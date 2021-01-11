@@ -1,12 +1,28 @@
-// math calculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
 using namespace std;
 float pi = 3.14;
 
 void invalidInput(){
-  cout << "invalid input . please run the program again and type in a vaid input\n";
+  cout << "invalid input . please run the program again and type in a vaid input\a";
+}
+void perimeterRectangle(){
+  cout << "Please enter the length: \n";
+  double length;
+  cin >> length;
+  cout << "Please enter the width: \n";
+  double width;
+  cin >> width;
+  cout << "Perimeter: "<< (length + width) * 2<< endl;
+}
+void areaRectangle(){
+  cout << "Please enter the length: \n";
+  double length;
+  cin >> length;
+  cout << "Please enter the width: \n";
+  double width;
+  cin >> width;
+  cout << "Area: "<< length * width<< endl;
 }
 void perimeterCircle(){
   cout << "Please enter the radius: \n";
@@ -20,6 +36,20 @@ void areaCircle(){
   cin >> Radius;
   cout << "area: "<< Radius * Radius * pi<<endl;
 
+}
+void calRectangle(){
+  cout << "area or perimeter?\n";
+  string anwser;
+  cin >> anwser;
+  if (anwser == "area"){
+    areaRectangle();
+  }
+  if( anwser == "perimeter"){
+    perimeterRectangle();
+  }
+  else{
+    invalidInput();
+  }
 }
 void calCircle(){
   cout << "area or perimeter?\n";
@@ -41,6 +71,12 @@ void operationChosen(){
   if (anwser == "c"){
     calCircle();
   }
+  if (anwser == "t"){
+    calRectangle();
+  }
+  else{
+    invalidInput();
+  }
 }
 void choseOperation() {
     cout << "what operation do you want to do?   (type -d for version details)\n";
@@ -50,6 +86,9 @@ void choseOperation() {
     if (anwser == "y") {
         cout << "shapes you can calculate: 2D = c for circle t for  Triangle(comingsoon)\n";
         operationChosen();
+      }
+      else{
+        invalidInput();
       }
 
 }
