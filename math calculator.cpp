@@ -5,7 +5,6 @@ float pi = 3.14;
 
 void invalidInput() {
 	cout << ""<<endl;
-	cout << "invalid input . please run the program again and type in a vaid input  \a";
 }
 
 void perimeterRectangle() {
@@ -39,12 +38,33 @@ void areaCircle() {
 	cout << "area: " << Radius * Radius * pi << endl;
 
 }
+void numberCalc(){
+	cout << "enter an operation:        (like 2*2)\n";
+	double num1;
+	cin >> num1;
+	string operation;
+	cin >> operation;
+	double num2;
+	cin >> num2;
+	if (operation == "*"){
+		cout << num1 * num2<<endl;
+	}
+	if (operation == "+"){
+		cout << num1 + num2<<endl;
+	}
+	if (operation == "-"){
+		cout << num1 - num2<<endl;
+	}
+	else{
+		invalidInput();
+	}
+}
 void calRectangle() {
-	cout << "|||||||||||||||||||||||\n";
-	cout << "|                     |\n";
-	cout << "|                     |\n";
-	cout << "|                     |\n";
-	cout << "|||||||||||||||||||||||\n";
+	cout << "||||||||||||||||||||||||\n";
+	cout << "||                    ||\n";
+	cout << "||                    ||\n";
+	cout << "||                    ||\n";
+	cout << "||||||||||||||||||||||||\n";
 	cout << "area or perimeter?\n";
 	string anwser;
 	cin >> anwser;
@@ -59,12 +79,12 @@ void calRectangle() {
 	}
 }
 void calCircle() {
-	cout << "    ||||||||\n";
-	cout << "   |        |\n";
-	cout << "  |          |\n";
-	cout << "  |          |\n";
-	cout << "   |        |\n";
-	cout << "    ||||||||\n";
+	cout << "     |||||||\n";
+	cout << "   ||       ||\n";
+	cout << "  ||         ||\n";
+	cout << "  ||         ||\n";
+	cout << "   ||       ||\n";
+	cout << "     |||||||\n";
 	cout << "area or perimeter?\n";
 	string anwser;
 	cin >> anwser;
@@ -84,7 +104,7 @@ void operationChosen() {
 	if (anwser == "c") {
 		calCircle();
 	}
-	if (anwser == "t") {
+	if (anwser == "r") {
 		calRectangle();
 	}
 	else {
@@ -96,10 +116,10 @@ void shapeCalc() {
 	string anwser;
 	cin >> anwser;
 	if (anwser == "y") {
-		cout << "shapes you can calculate: 2D = c for circle t for  Triangle(comingsoon)\n";
+		cout << "shapes you can calculate: 2D = c for circle r for  Rectangle\n";
 		operationChosen();
 	}
-	else {
+	if(anwser != "y" , "n") {
 		invalidInput();
 	}
 }
@@ -111,7 +131,7 @@ void choseOperation() {
 		shapeCalc();
 	}
 	if (typ == "n") {
-		cout << "coming soon\n";
+		numberCalc();
 	}
 	else {
 		invalidInput();
