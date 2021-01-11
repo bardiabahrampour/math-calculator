@@ -4,7 +4,7 @@ using namespace std;
 float pi = 3.14;
 
 void invalidInput(){
-  cout << "invalid input . please run the program again and type in a vaid input\a";
+  cout << "invalid input . please run the program again and type in a vaid input  \a";
 }
 void perimeterRectangle(){
   cout << "Please enter the length: \n";
@@ -38,6 +38,10 @@ void areaCircle(){
 
 }
 void calRectangle(){
+  cout << "|-----------|\n";
+  cout << "|           |\n";
+  cout << "|           |\n";
+  cout << "|-----------|\n";
   cout << "area or perimeter?\n";
   string anwser;
   cin >> anwser;
