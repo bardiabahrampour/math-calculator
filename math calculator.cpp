@@ -34,6 +34,25 @@ void perimeterTriangle() {
 	cin >> base;
 	cout << "perimeter: " << side1 + side2 + base << endl;
 }
+void sizeConverter(){
+	cout << "Please enter the value: ";
+	double int1;
+	string unit1;
+	string unit2;
+	cin >> int1;
+	cout << "Please enter the unit cm , mm , m";
+	cin >> unit1;
+	cout << "Please enter the unit you want to convert to : cm , mm , m";
+	cin >> unit2;
+	if (unit1 == "cm"){
+		if (unit2 == "m"){
+			cout << int1 / 100 << endl;
+		}
+		if (unit2 == "mm"){
+			cout << int1 * 10 << endl;
+		}
+	}
+}
 void areaTriangle() {
 	cout << "Please enter the altitude: \n";
 	double altitude;
@@ -58,7 +77,12 @@ void areaCircle() {
 
 }
 void numConverter() {
-	//do nothing wiil add later
+	cout << "what do you want to convert ? ( (s)size, (others will come later)\n";
+	string anwser;
+	cin >> anwser;
+	if (anwser == "s"){
+		sizeConverter();
+	}
 }
 void numberCalc() {
 	cout << "enter an operation:        (like 2*2)\n";
@@ -154,9 +178,12 @@ void shapeCalc() {
 	operationChosen();
 }
 void choseOperation() {
-	cout << "what operation do you want to do? s : shape calculation -- n : number calculation     (type -d for version details)\n";
+	cout << "what operation do you want to do? s : shape calculation -- n : number calculation\n  -- u unit conversion (type -d for version details)\n";
 	string typ;
 	cin >> typ;
+	if (typ == "u"){
+		numConverter();
+	}
 	if (typ == "s") {
 		shapeCalc();
 	}
