@@ -1,11 +1,11 @@
 
 #include <iostream>
 using namespace std;
-//version 0.0.7
+//version 0.1.0
 float pi = 3.14;
 
 void invalidInput() {
-	cout << "operation finished ";
+	cout << "operation ended ";
 }
 
 void perimeterRectangle() {
@@ -36,14 +36,30 @@ void perimeterTriangle() {
 }
 void sizeConverter(){
 	cout << "Please enter the value: ";
-	double int1;
+	double int1{};
 	string unit1;
 	string unit2;
 	cin >> int1;
-	cout << "Please enter the unit cm , mm , m";
+	cout << "Please enter the unit cm , mm , m : ";
 	cin >> unit1;
-	cout << "Please enter the unit you want to convert to : cm , mm , m";
+	cout << "Please enter the unit you want to convert to : cm , mm , m : ";
 	cin >> unit2;
+	if (unit1 == "mm"){
+		if (unit2 == "cm"){
+			cout << int1 / 10 << '\n';
+		}
+		if (unit2 == "m"){
+			cout << int1 / 1000 << '\n';
+		}
+	}
+	if (unit1 == "m"){
+		if (unit2 == "mm"){
+			cout << int1 * 1000 << endl;
+		}
+		if (unit2 == "cm"){
+			cout << int1 * 100 << endl;
+		}
+	}
 	if (unit1 == "cm"){
 		if (unit2 == "m"){
 			cout << int1 / 100 << endl;
@@ -87,11 +103,12 @@ void numConverter() {
 void numberCalc() {
 	cout << "enter an operation:        (like 2*2)\n";
 	double num1;
-	cin >> num1;
 	string operation;
-	cin >> operation;
 	double num2;
-	cin >> num2;
+	cin >> num1 >> operation >> num2;
+	if (operation == "/"){
+		cout << num1 / num2 << endl;
+	}
 	if (operation == "*") {
 		cout << num1 * num2 << endl;
 	}
@@ -145,9 +162,9 @@ void calCircle() {
 	}
 }
 void calTriangle() {
-	cout << "     *      \n";
-	cout << "  ******* \n";
-	cout << "*********** \n";
+	cout << "      *      \n";
+	cout << "   ******* \n";
+	cout << " *********** \n";
 	cout << "************* \n";
 	cout << "area or perimeter?\n";
 	string anwser;
@@ -160,7 +177,8 @@ void calTriangle() {
 
 	}
 }
-void operationChosen() {
+void shapeCalc() {
+	cout << "shapes you can calculate: 2D = c for circle r for  Rectangle t for Triangle\n";
 	string anwser;
 	cin >> anwser;
 	if (anwser == "c") {
@@ -169,14 +187,14 @@ void operationChosen() {
 	if (anwser == "r") {
 		calRectangle();
 	}
+	if (anwser == "t"){
+		calTriangle();
+	}
 	else {
 		invalidInput();
 	}
 }
-void shapeCalc() {
-	cout << "shapes you can calculate: 2D = c for circle r for  Rectangle\n";
-	operationChosen();
-}
+
 void choseOperation() {
 	cout << "what operation do you want to do? s : shape calculation -- n : number calculation\n  -- u unit conversion (type -d for version details)\n";
 	string typ;
@@ -203,4 +221,5 @@ int main()
 {
 	startApp();
 	system("pause");
+	return 0;
 }
