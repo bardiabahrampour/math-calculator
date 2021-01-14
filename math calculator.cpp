@@ -7,7 +7,10 @@ float pi = 3.14;
 void invalidInput() {
 	cout << "operation ended ";
 }
-
+void versionDetails(){
+	cout << " Welcome to math calculator. I am Bardia Bahrampour \n I am a beginner programmer and also a beginner game developer \n i made this program to teach myself C++ and make the ultimate calculator\n";
+	cout <<	"Version : 0.1.0\n Version details : added some stuff like unit converter , cleaned up the code a little bit , added triangle\n Lines of code : 232\n";
+}
 void perimeterRectangle() {
 	cout << "Please enter the length: \n";
 	double length;
@@ -34,7 +37,7 @@ void perimeterTriangle() {
 	cin >> base;
 	cout << "perimeter: " << side1 + side2 + base << endl;
 }
-void sizeConverter(){
+void sizeConverter() {
 	cout << "Please enter the value: ";
 	double int1{};
 	string unit1;
@@ -44,27 +47,27 @@ void sizeConverter(){
 	cin >> unit1;
 	cout << "Please enter the unit you want to convert to : cm , mm , m : ";
 	cin >> unit2;
-	if (unit1 == "mm"){
-		if (unit2 == "cm"){
+	if (unit1 == "mm") {
+		if (unit2 == "cm") {
 			cout << int1 / 10 << '\n';
 		}
-		if (unit2 == "m"){
+		if (unit2 == "m") {
 			cout << int1 / 1000 << '\n';
 		}
 	}
-	if (unit1 == "m"){
-		if (unit2 == "mm"){
+	if (unit1 == "m") {
+		if (unit2 == "mm") {
 			cout << int1 * 1000 << endl;
 		}
-		if (unit2 == "cm"){
+		if (unit2 == "cm") {
 			cout << int1 * 100 << endl;
 		}
 	}
-	if (unit1 == "cm"){
-		if (unit2 == "m"){
+	if (unit1 == "cm") {
+		if (unit2 == "m") {
 			cout << int1 / 100 << endl;
 		}
-		if (unit2 == "mm"){
+		if (unit2 == "mm") {
 			cout << int1 * 10 << endl;
 		}
 	}
@@ -96,7 +99,7 @@ void numConverter() {
 	cout << "what do you want to convert ? ( (s)size, (others will come later)\n";
 	string anwser;
 	cin >> anwser;
-	if (anwser == "s"){
+	if (anwser == "s") {
 		sizeConverter();
 	}
 }
@@ -106,7 +109,7 @@ void numberCalc() {
 	string operation;
 	double num2;
 	cin >> num1 >> operation >> num2;
-	if (operation == "/"){
+	if (operation == "/") {
 		cout << num1 / num2 << endl;
 	}
 	if (operation == "*") {
@@ -187,7 +190,7 @@ void shapeCalc() {
 	if (anwser == "r") {
 		calRectangle();
 	}
-	if (anwser == "t"){
+	if (anwser == "t") {
 		calTriangle();
 	}
 	else {
@@ -199,7 +202,7 @@ void choseOperation() {
 	cout << "what operation do you want to do? s : shape calculation -- n : number calculation\n  -- u unit conversion (type -d for version details)\n";
 	string typ;
 	cin >> typ;
-	if (typ == "u"){
+	if (typ == "u") {
 		numConverter();
 	}
 	if (typ == "s") {
@@ -207,6 +210,9 @@ void choseOperation() {
 	}
 	if (typ == "n") {
 		numberCalc();
+	}
+	if (typ == "-d"){
+		versionDetails();
 	}
 	else {
 		invalidInput();
