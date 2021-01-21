@@ -3,13 +3,17 @@
 using namespace std;
 //version 0.1.0
 float pi = 3.14;
-
+string pt1 = "Welcome to math calculator. I am Bardia Bahrampour";
+string pt2 = "I am a beginner programmer and also a beginner game developer";
+string pt3 = "I made this program to teach myself C++ and make the best calculator";
+string pt4 = "Version : 0.1.5\nVersion details : added area converter";
+string pt5 = "";
+string pt6 = "Lines of code : 274";
 void invalidInput() {
 	cout << "operation ended ";
 }
 void versionDetails(){
-	cout << " Welcome to math calculator. I am Bardia Bahrampour \n I am a beginner programmer and also a beginner game developer \n i made this program to teach myself C++ and make the ultimate calculator\n";
-	cout <<	"Version : 0.1.0\n Version details : added some stuff like unit converter , cleaned up the code a little bit , added triangle\n Lines of code : 232\n";
+	cout << pt1<<"\n"<<pt2<<"\n"<<pt3<< "\n"<< pt4 << pt5 <<"\n" << pt6<< "\n";
 }
 void perimeterRectangle() {
 	cout << "Please enter the length: \n";
