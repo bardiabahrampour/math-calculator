@@ -37,6 +37,42 @@ void perimeterTriangle() {
 	cin >> base;
 	cout << "perimeter: " << side1 + side2 + base << endl;
 }
+void areaConverter(){
+	cout << "Due to my educational limitaiton , there might be problems where it outputs hex values\n";
+	cout << "Please enter the value: ";
+	double int1{};
+	string unit1;
+	string unit2;
+	cin >> int1;
+	cout << "Please enter the unit cm2 , mm2 , m2 : ";
+	cin >> unit1;
+	cout << "Please enter the unit you want to convert to : cm2 , mm2 , m2 : ";
+	cin >> unit2;
+	if (unit1 == "mm2") {
+		if (unit2 == "cm2") {
+			cout << int1 / 100 << '\n';
+		}
+		if (unit2 == "m2") {
+			cout << int1 / 1000000 << '\n';
+		}
+	}
+	if (unit1 == "m2") {
+		if (unit2 == "mm2") {
+			cout <<int1 * 1000 * 1000 << endl;
+		}
+		if (unit2 == "cm2") {
+			cout << int1 * 10000 << endl;
+		}
+	}
+	if (unit1 == "cm2") {
+		if (unit2 == "m2") {
+			cout << int1 / 10000 << endl;
+		}
+		if (unit2 == "mm2") {
+			cout << int1 * 100 << endl;
+		}
+	}
+}
 void sizeConverter() {
 	cout << "Please enter the value: ";
 	double int1{};
@@ -96,9 +132,12 @@ void areaCircle() {
 
 }
 void numConverter() {
-	cout << "what do you want to convert ? ( (s)size, (others will come later)\n";
+	cout << "what do you want to convert ? ( (s)size,(a) area (others will come later)\n";
 	string anwser;
 	cin >> anwser;
+	if (anwser == "a"){
+		areaConverter();
+	}
 	if (anwser == "s") {
 		sizeConverter();
 	}
