@@ -1,4 +1,5 @@
-
+#include <cmath>
+#include <stdio.h>
 #include <iostream>
 using namespace std;
 //version 0.1.0
@@ -8,7 +9,7 @@ string pt2 = "I am a beginner programmer and also a beginner game developer";
 string pt3 = "I made this program to teach myself C++ and make the best calculator";
 string pt4 = "Version : 0.1.5\nVersion details : added area converter";
 string pt5 = "";
-string pt6 = "Lines of code : 274";
+string pt6 = "Lines of code : 285";
 void invalidInput() {
 	cout << "operation ended ";
 }
@@ -147,22 +148,32 @@ void numConverter() {
 	}
 }
 void numberCalc() {
-	cout << "enter an operation:        (like 2*2)\n";
+	cout << "enter an operation:        (type s for radical)\n";
 	double num1;
 	string operation;
 	double num2;
+	int times;
 	cin >> num1 >> operation >> num2;
+	if (operation == "s"){
+		double result = sqrt(num1);
+		cout << "number 2 = 0"<< "\n";
+		cout << result << "\n";
+	}
+	if (operation == "^"){
+		times = num2;
+		cout << pow(num1 , times)<< "\n";
+	}
 	if (operation == "/") {
-		cout << num1 / num2 << endl;
+		cout << num1 / num2 << "\n";
 	}
 	if (operation == "*") {
-		cout << num1 * num2 << endl;
+		cout << num1 * num2 << "\n";
 	}
 	if (operation == "+") {
-		cout << num1 + num2 << endl;
+		cout << num1 + num2 << "\n";
 	}
 	if (operation == "-") {
-		cout << num1 - num2 << endl;
+		cout << num1 - num2 << "\n";
 	}
 	else {
 		invalidInput();
